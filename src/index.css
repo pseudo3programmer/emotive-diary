@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+@layer base {
+  :root {
+    --background: 44 33% 98%;
+    --foreground: 200 19% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 200 19% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 19% 18%;
+
+    --primary: 34 74% 61%;
+    --primary-foreground: 210 20% 98%;
+
+    --secondary: 200 13% 95%;
+    --secondary-foreground: 200 19% 18%;
+
+    --muted: 200 13% 95%;
+    --muted-foreground: 200 10% 46%;
+
+    --accent: 25 95% 67%;
+    --accent-foreground: 200 19% 18%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 200 16% 90%;
+    --input: 200 16% 90%;
+    --ring: 25 95% 67%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 35 33% 98%;
+    --sidebar-foreground: 200 10% 26%;
+    --sidebar-primary: 25 95% 67%;
+    --sidebar-primary-foreground: 200 19% 18%;
+    --sidebar-accent: 200 13% 95%;
+    --sidebar-accent-foreground: 200 19% 18%;
+    --sidebar-border: 35 16% 91%;
+    --sidebar-ring: 25 95% 67%;
+  }
+
+  .dark {
+    --background: 200 50% 12%;
+    --foreground: 210 20% 98%;
+
+    --card: 200 50% 14%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 200 45% 14%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 34 74% 61%;
+    --primary-foreground: 210 20% 98%;
+
+    --secondary: 200 25% 18%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 200 25% 18%;
+    --muted-foreground: 200 20% 65%;
+
+    --accent: 25 95% 67%;
+    --accent-foreground: 210 20% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 200 25% 18%;
+    --input: 200 25% 18%;
+    --ring: 25 95% 67%;
+
+    --sidebar-background: 200 30% 14%;
+    --sidebar-foreground: 210 20% 98%;
+    --sidebar-primary: 34 74% 51%;
+    --sidebar-primary-foreground: 210 20% 98%;
+    --sidebar-accent: 200 20% 20%;
+    --sidebar-accent-foreground: 210 20% 98%;
+    --sidebar-border: 200 20% 20%;
+    --sidebar-ring: 25 95% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/70 dark:bg-gray-900/70 backdrop-blur-lg border border-white/20 dark:border-gray-800/30 rounded-2xl shadow-lg;
+  }
+  
+  .art-card {
+    @apply bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-2 border-artistic-primary/30 dark:border-artistic-primary/20 rounded-2xl shadow-lg;
+  }
+  
+  .brushstroke-border {
+    @apply relative after:content-[''] after:absolute after:-inset-1 after:-z-10 after:rounded-xl after:bg-artistic-secondary/40 after:blur-sm;
+  }
+
+  .emotion-dot {
+    @apply w-3 h-3 rounded-full inline-block mr-2;
+  }
+
+  .emotion-dot-joy {
+    @apply bg-joy;
+  }
+
+  .emotion-dot-sadness {
+    @apply bg-sadness;
+  }
+
+  .emotion-dot-anger {
+    @apply bg-anger;
+  }
+
+  .emotion-dot-fear {
+    @apply bg-fear;
+  }
+
+  .emotion-dot-surprise {
+    @apply bg-surprise;
+  }
+
+  .emotion-dot-neutral {
+    @apply bg-neutral;
+  }
+  
+  .art-input {
+    @apply border-2 border-artistic-primary/30 focus:border-artistic-primary/60 rounded-lg bg-white/70 dark:bg-gray-900/70 backdrop-blur-sm;
+  }
+  
+  .art-heading {
+    @apply font-serif text-foreground/90 leading-tight tracking-wide;
+  }
+}
+
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+
+/* Page transition animations */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms ease-out, transform 300ms ease-out;
+}
+
+.page-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 250ms ease-in, transform 250ms ease-in;
+}
