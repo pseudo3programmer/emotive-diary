@@ -3,7 +3,7 @@
 
 Emotivo Diary is a full-stack journal application that helps users track and understand their emotions.
 
-## Project Structure
+# Project Structure
 
 This project consists of:
 
@@ -11,7 +11,7 @@ This project consists of:
 2. A Java Spring Boot backend
 3. An H2 SQL database
 
-## Frontend Tech Stack
+# Frontend Tech Stack
 
 - Vite
 - TypeScript
@@ -21,7 +21,7 @@ This project consists of:
 - React Router
 - Recharts for visualizations
 
-## Backend Tech Stack
+# Backend Tech Stack
 
 - Java 17
 - Spring Boot
@@ -29,9 +29,9 @@ This project consists of:
 - H2 Database (can be replaced with MySQL, PostgreSQL, etc.)
 - Maven
 
-## Getting Started
+# Getting Started
 
-### Running the Frontend
+# Running the Frontend
 
 ```sh
 # Install dependencies
@@ -41,7 +41,7 @@ npm i
 npm run dev
 ```
 
-### Running the Backend
+# Running the Backend
 
 ```sh
 # Navigate to the backend directory
@@ -54,7 +54,7 @@ mvn clean install
 mvn spring-boot:run
 ```
 
-## Features
+# Features
 
 - Create journal entries with emotion analysis
 - View a timeline of past entries
@@ -62,13 +62,13 @@ mvn spring-boot:run
 - Export journal data as JSON
 - Persistent storage in a SQL database
 
-## Architecture
+# Architecture
 
 - The frontend communicates with the backend via RESTful API calls
 - The backend uses Spring Data JPA to interact with the database
 - Journal entries and their emotion analyses are stored in related database tables
 
-## API Endpoints
+# API Endpoints
 
 - `GET /api/journal` - Get all journal entries
 - `POST /api/journal` - Create a new journal entry
@@ -77,7 +77,7 @@ mvn spring-boot:run
 - `GET /api/journal/search?query={text}` - Search entries by content
 - `GET /api/journal/emotion/{emotion}` - Filter entries by emotion
 
-## Next Steps
+# Next Steps
 
 - Add user authentication
 - Implement more advanced emotion analysis
