@@ -1,7 +1,7 @@
 
-# Emotivo Journal - Full Stack Journal Application
+# Emotivo Diary - Full Stack Journal Application
 
-Emotivo Journal is a full-stack journal application that helps users track and understand their emotions.
+Emotivo Diary is a full-stack journal application that helps users track and understand their emotions.
 
 ## Project Structure
 
